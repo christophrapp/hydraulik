@@ -1,0 +1,21 @@
+# Daten für die Abwasserleitung in Hamburg
+# qs: 1=Kreis, 2=Trapez, 3=Parabel,
+eps=0.0001
+rho=1000
+g=9.8065
+qs=1
+d1=.6
+d2=.2
+d3=.6
+Q1=.7
+Q2=.04
+T=10
+L1=1894.91
+summeZ1=1.463
+ks1=3E-5
+L2=394.75
+summeZ2=.28
+ks2=1E-5
+L3=225.38
+summeZ3=.28
+ks3=3E-5
