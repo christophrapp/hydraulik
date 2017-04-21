@@ -19,7 +19,7 @@ Die Octave-Programme sind unter der GNU General Public License (http://www.gnu.o
 
 #### **Function-Name:** 	readData(file,delimiter)
 - **Beschreibung:** 	weist den Daten der Datei ‚file.XXX‘ die durch den ‚delimiter‘ getrennten Werte zu.
--- **Ausgaben:**	alle einzeln in der Datei definierten Variablen erhalten ihren Wert zugeordnet
+- **Ausgaben:**	alle einzeln in der Datei definierten Variablen erhalten ihren Wert zugeordnet
 
 
 #### **Function-Name:** 	A=flaeche(qs,qsP,y)
@@ -352,3 +352,5 @@ Potentialtheorie
 	[x1,y1;x2,y2;x3,y3;xn,yn]
 - **Ergebnis:**	Stromlinien der Form
 	stream{i}(x,y)
+
+
