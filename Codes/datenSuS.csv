@@ -1,0 +1,10 @@
+Geometriedaten für Gerinnehydraulik; standardisiert; [m]:
+qs: 1=Kreis, 2=Trapez, 3=Parabel,
+eps=0.001
+g=9.8065
+qs=2
+b=9
+m=0
+a=0
+d=0
+Q=55
