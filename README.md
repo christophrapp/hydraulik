@@ -1,87 +1,92 @@
-# hydraulik
+hydraulik
+=========
 Octave/MatLAB-Codes for basic hydraulic probelms
 
 Hydraulik für Ingenieure – ein Kurs mit Experimenten und Open-Source-Codes
+--------------------------------------------------------------------------
 
 Christoph Rapp
+--------------
 
 Die Octave-Programme sind unter der GNU General Public License (http://www.gnu.org/licenses) veröffentlicht worden. Alle Eingaben und Berechnungen erfolgen mit SI-Einheiten. Die Programme greifen teilweise auf die im .csv-Format abgespeicherten Eingabe-Dateien zu. Alle Dateien müssen in einem Verzeichnis liegen und von dort aus aufgerufen werden.
 
 übergreifende Funktionen
+------------------------
 
-Function-Name: 	datenEinlesen(daten,delimiter,header)
-Beschreibung: 	weist den Daten der Datei ‚daten.XXX‘ die durch den ‚delimiter‘ getrennten Werte zu. Dabei werden die mit der Integer-Zahl header definierten Zeilen übersprungen
-Ausgaben:	alle einzeln in der Datei definierten Variablen erhalten ihren Wert zugeordnet
-
-
-Function-Name: 	readData(file,delimiter)
-Beschreibung: 	weist den Daten der Datei ‚file.XXX‘ die durch den ‚delimiter‘ getrennten Werte zu. 
-Ausgaben:	alle einzeln in der Datei definierten Variablen erhalten ihren Wert zugeordnet
+**Function-Name:** 	datenEinlesen(daten,delimiter,header)
+**Beschreibung:** 	weist den Daten der Datei ‚daten.XXX‘ die durch den ‚delimiter‘ getrennten Werte zu. Dabei werden die mit der Integer-Zahl header definierten Zeilen übersprungen
+**Ausgaben:**	alle einzeln in der Datei definierten Variablen erhalten ihren Wert zugeordnet
 
 
-Function-Name: 	A=flaeche(qs,qsP,y)
-Beschreibung: 	Berechnung der Querschnittsfläche bei Kreis- Trapez- oder Parabel-Profilen
-Eingabewerte:	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
+**Function-Name:** 	readData(file,delimiter)
+**Beschreibung:** 	weist den Daten der Datei ‚file.XXX‘ die durch den ‚delimiter‘ getrennten Werte zu. 
+**Ausgaben:**	alle einzeln in der Datei definierten Variablen erhalten ihren Wert zugeordnet
+
+
+**Function-Name:** 	A=flaeche(qs,qsP,y)
+**Beschreibung:** 	Berechnung der Querschnittsfläche bei Kreis- Trapez- oder Parabel-Profilen
+**Eingabewerte:**	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
 	Querschnittsparameter: qsP(d, [s,m],a)
 	Fließtiefe: y
-Ergebnis:	Querschnittsfläche: A
+**Ergebnis:**	Querschnittsfläche: A
 
 
-Function-Name: 	U=umfang(qs,qsP,y)
-Beschreibung: 	Berechnung des benetzten Umfangs von Kreis- Trapez- oder Parabel-Profilen
-Eingabewerte:	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
+**Function-Name:** 	U=umfang(qs,qsP,y)
+**Beschreibung:** 	Berechnung des benetzten Umfangs von Kreis- Trapez- oder Parabel-Profilen
+**Eingabewerte:**	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
 	Querschnittsparameter: qsP(d, [s,m],a)
 	Fließtiefe: y
-Ergebnis:	benetzter Umfang: U
+**Ergebnis:**	benetzter Umfang: U
 
 
-Function-Name: 	bWsp=bWsp(qs,qsP,y)
-Beschreibung: 	Berechnung der Breite des Wasserspiegels bei Kreis- Trapez- oder Parabel-Profilen
-Eingabewerte:	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
+**Function-Name:** 	bWsp=bWsp(qs,qsP,y)
+**Beschreibung:** 	Berechnung der Breite des Wasserspiegels bei Kreis- Trapez- oder Parabel-Profilen
+**Eingabewerte:**	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
 	Querschnittsparameter: qsP(d, [s,m],a)
 	Fließtiefe: y
-Ergebnis:	Breite des Wasserspiegels: bWsp
+**Ergebnis:**	Breite des Wasserspiegels: bWsp
 
 
-Function-Name: 	sp=schwerpunkt(qs,qsP,y)
-Beschreibung: 	Berechnung des Schwerpunkts von Kreis- Trapez- oder Parabel-Profilen
-Eingabewerte:	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
+**Function-Name:** 	sp=schwerpunkt(qs,qsP,y)
+**Beschreibung:** 	Berechnung des Schwerpunkts von Kreis- Trapez- oder Parabel-Profilen
+**Eingabewerte:**	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
 	Querschnittsparameter: qsP(d, [s,m],a)
 	Fließtiefe: y
-Ergebnis:	Flächenschwerpunkt: sp
+**Ergebnis:**	Flächenschwerpunkt: sp
 
 
-Function-Name: 	lambda=pc(qs,qsP,y,Q,ks,T)
-Beschreibung: 	Berechnung des Rohrreibungsbeiwerts lambda über den Prandtl-Colebrook-Algorithmus
-Eingabewerte:	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
+**Function-Name:** 	lambda=pc(qs,qsP,y,Q,ks,T)
+**Beschreibung:** 	Berechnung des Rohrreibungsbeiwerts lambda über den Prandtl-Colebrook-Algorithmus
+**Eingabewerte:**	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
 	Querschnittsparameter: qsP(d, [s,m],a)
 	Fließtiefe: y (beim vollgefüllten Rohr y=d)
 	Durchfluss: Q
 	äquivalente Sandrauheit: ks
 	Temperatur: T
-Eingabedatei:	Zeile 19: kinViskositaet.csv
-Ergebnis:	Rohrreibungsbeiwert: lambda
+**Eingabedatei:	Zeile 19: kinViskositaet.csv
+**Ergebnis:	Rohrreibungsbeiwert: lambda
 
 
  
 Gerinnehydraulik
+----------------
 
-Function-Name: 	f=stK(y,qs,qsP,Q,g,rho,StN)
-Beschreibung: 	Solver für Stützkraft-Berechnung für konjugierte Fließtiefe beim Wechselsprung
-Eingabewerte:	Fließtiefe: y
+**Function-Name:** 	f=stK(y,qs,qsP,Q,g,rho,StN)
+**Beschreibung:** 	Solver für Stützkraft-Berechnung für konjugierte Fließtiefe beim Wechselsprung
+**Eingabewerte:**	Fließtiefe: y
 	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
 	Querschnittsparameter: qsP(d, [s,m],a)
 	Durchfluss: Q
 	Gravitationskonstante: g
 	Dichte: rho
 	Stützkraft bei Normalwasserverhältnissen: StN
-Aufruf:	[yk,fval,info]=fsolve(@(yk) stK(yk,qs,qsP,Q,g,rho,StN),yGuess)
-Ergebnis:	Funktionswert f für konjugierte Fließtiefe: yk
+**Aufruf:**	[yk,fval,info]=fsolve(@(yk) stK(yk,qs,qsP,Q,g,rho,StN),yGuess)
+**Ergebnis:**	Funktionswert f für konjugierte Fließtiefe: yk
 
 
-Function-Name: 	f=NWV(y,qs,qsP,Q,g,T,ks,kSt,JS)
-Beschreibung: 	Berechnung der konjugierten Fließtiefe beim Wechselsprung
-Eingabewerte:	Fließtiefe: y
+**Function-Name:** 	f=NWV(y,qs,qsP,Q,g,T,ks,kSt,JS)
+**Beschreibung:** 	Berechnung der konjugierten Fließtiefe beim Wechselsprung
+**Eingabewerte:**	Fließtiefe: y
 	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
 	Querschnittsparameter: qsP(d, [s,m],a)
 	Durchfluss: Q
@@ -90,44 +95,44 @@ Eingabewerte:	Fließtiefe: y
 	äquivalente Sandrauheit: ks (falls ks=0 wird die Rauheit über die Manning-Strickler-Gleichung einbezogen)
 	Strickler-Beiwert: kSt (falls kSt=0 wird die Rauheit über den Prandtl-Colebrook-Algorithmus berechnet)
 	Sohlgefälle: JS
-Subroutinen:	stK(yk,qs,qsP,Q,g,rho,StN)
-Aufruf:	[yk,fval,info]=fsolve(@(yk) stK(yk,qs,qsP,Q,g,rho,StN),yGuess)
-Ergebnis:	Funktionswert f für Normalwasser-Fließtiefe: yN
+**Subroutinen:**	stK(yk,qs,qsP,Q,g,rho,StN)
+**Aufruf:**	[yk,fval,info]=fsolve(@(yk) stK(yk,qs,qsP,Q,g,rho,StN),yGuess)
+**Ergebnis:**	Funktionswert f für Normalwasser-Fließtiefe: yN
 
 
-Function-Name: 	yc=yC(qs,qsP,Q,g)
-Beschreibung: 	Berechnung der kritischen Fließtiefe 
-Eingabewerte:	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
+**Function-Name:** 	yc=yC(qs,qsP,Q,g)
+**Beschreibung:** 	Berechnung der kritischen Fließtiefe 
+**Eingabewerte:**	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
 	Querschnittsparameter: qsP(d, [s,m],a)
 	Durchfluss: Q
 	Gravitationskonstante: g
-Subroutinen:	phiCKreis % unten aufgeführt
+**Subroutinen:**	phiCKreis % unten aufgeführt
 	yCTrapez % unten aufgeführt
-Ergebnis:	kritische Fließtiefe: yc
+**Ergebnis:**	kritische Fließtiefe: yc
 
 
-Function-Name: 	yk=konjugiert(qs,qsP,y,Q,g,rho,yc)
-Beschreibung: 	Berechnung der konjugierten Fließtiefe beim Wechselsprung
-Eingabewerte:	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
+**Function-Name:** 	yk=konjugiert(qs,qsP,y,Q,g,rho,yc)
+**Beschreibung:** 	Berechnung der konjugierten Fließtiefe beim Wechselsprung
+**Eingabewerte:**	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
 	Querschnittsparameter: qsP(d, [s,m],a)
 	Fließtiefe: y
 	Durchfluss: Q
 	Gravitationskonstante: g
 	Dichte: rho
 	kritische Fließtiefe: yc
-Subroutinen:	stK(yk,qs,qsP,Q,g,rho,StN)
-Aufruf:	[yk,fval,info]=fsolve(@(yk) stK(yk,qs,qsP,Q,g,rho,StN),yGuess)
-Ergebnis:	konjugierte Fließtiefe: yk
+**Subroutinen:**	stK(yk,qs,qsP,Q,g,rho,StN)
+**Aufruf:**	[yk,fval,info]=fsolve(@(yk) stK(yk,qs,qsP,Q,g,rho,StN),yGuess)
+**Ergebnis:**	konjugierte Fließtiefe: yk
 
 
-Skript-Name: 	normalwasser.m
-Beschreibung: 	Berechnung der Normalwasserverhältnisse.
-Eingabedatei:	Zeile 18: datenGerinne.csv
-Bildschirmeingaben:	Eingabe, ob die Fließtiefe im Strömen (yl) oder im Schießen (yr) bestimmt werden soll
+**Skript-Name:** 	normalwasser.m
+**Beschreibung: 	Berechnung der Normalwasserverhältnisse.
+**Eingabedatei:**	Zeile 18: datenGerinne.csv
+**Bildschirmeingaben:	Eingabe, ob die Fließtiefe im Strömen (yl) oder im Schießen (yr) bestimmt werden soll
 Bekannte Fließtiefe rechts (Strömen) bzw. links (Schießen) eingeben
-Subroutinen:	NWV(y,qs,qsP,Q,g,T,ks,kSt,JS)
+**Subroutinen:**	NWV(y,qs,qsP,Q,g,T,ks,kSt,JS)
 	konjugiert(qs,qsP,y,Q,g,rho,yc)
-Ergebnis/Ausgabe:	Normalwasser-Fließtiefe: yN
+**Ergebnis/Ausgabe:**	Normalwasser-Fließtiefe: yN
 	Normalwasser-Geschwindigkeit: vN
 	Normalwasser-Energiehöhe: HN
 	Normalwasser-Froude-Zahl: FrN
@@ -167,6 +172,7 @@ Ausgabe:	Höhe des Stauschwalls bzw. Absperrsunks: h
 
  
 Rohrhydraulik
+-------------
 
 Skript-Name: 	couette.m
 Beschreibung: 	Berechnung des Geschwindigkeits-Profils einer Couette-Poiseuille-Strömung.
@@ -219,6 +225,7 @@ Ergebnis:	Durchfluss: Q
 
  
 instationäre Rohrhydraulik
+--------------------------
 
 Skript-Name: 	druckstoss.m
 Beschreibung: 	Programm zur Berechnung der Geschwindigkeiten und Drücke bei instationären Rohrströmungen mit Hilfe des Charakteristiken-Verfahrens.
@@ -263,6 +270,7 @@ Ergebnis:	Öffnungsfläche des Verschlussorgans zum Zeitpunkt t: At
 
  
 Potentialtheorie
+----------------
 
 Function-Name: 	[phi,psi,u,v]=parallel(x,y,u0,v0)
 Beschreibung: 	Berechnung der Potential- (phi) und Stromfunktion (psi) sowie der Geschwindigkeitskomponenten u und v in einem durch x und y definierten Feld, das einer Parallelströmung mit u0 und v0 unterliegt.
