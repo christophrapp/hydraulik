@@ -62,8 +62,8 @@ Die Octave-Programme sind unter der GNU General Public License (http://www.gnu.o
 	Durchfluss: Q
 	äquivalente Sandrauheit: ks
 	Temperatur: T
-- **Eingabedatei:	Zeile 19: kinViskositaet.csv
-- **Ergebnis:	Rohrreibungsbeiwert: lambda
+- **Eingabedatei:**	Zeile 19: kinViskositaet.csv
+- **Ergebnis:**	Rohrreibungsbeiwert: lambda
 
 
  
@@ -125,7 +125,7 @@ Gerinnehydraulik
 
 
 #### **Skript-Name:** 	normalwasser.m
-- **Beschreibung: 	Berechnung der Normalwasserverhältnisse.
+- **Beschreibung:** 	Berechnung der Normalwasserverhältnisse.
 - **Eingabedatei:**	Zeile 18: datenGerinne.csv
 - **Bildschirmeingaben:	Eingabe, ob die Fließtiefe im Strömen (yl) oder im Schießen (yr) bestimmt werden soll
 Bekannte Fließtiefe rechts (Strömen) bzw. links (Schießen) eingeben
