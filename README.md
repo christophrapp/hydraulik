@@ -183,7 +183,7 @@ Rohrhydraulik
 
 
 #### **Function-Name:** 	f=energie(Q,qs,qsP,y,l,ks,sZeta,A0,At,mue,g,T,dH)
-Aufruf:	[Q,fval,info]=fsolve(@(Q),qs,qsP,y,l, ks,sZeta,A0,At,mue,g,T,dH,PT,PP,eta),guess)
+- **Aufruf:**	[Q,fval,info]=fsolve(@(Q),qs,qsP,y,l, ks,sZeta,A0,At,mue,g,T,dH,PT,PP,eta),guess)
 - **Beschreibung:** 	Berechnung des Durchflusses in einem Rohrleitungssystem mit den Parametern:
 	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
 	Querschnittsparameter: qsP(d, [s,m],a)
@@ -203,7 +203,7 @@ Aufruf:	[Q,fval,info]=fsolve(@(Q),qs,qsP,y,l, ks,sZeta,A0,At,mue,g,T,dH,PT,PP,et
 
 
 #### **Function-Name:** f=rohr(Q,qs,qsP,y,l,ks,sZeta,A0,At,mue,g,T,dH,PT,PP,eta)
-Aufruf:	[Q,fval,info]=fsolve(@(Q),qs,qsP,y,l, ks,sZeta,A0,At,mue,g,T,dH,PT,PP,eta),guess)
+- **Aufruf:**	[Q,fval,info]=fsolve(@(Q),qs,qsP,y,l, ks,sZeta,A0,At,mue,g,T,dH,PT,PP,eta),guess)
 - **Beschreibung:** 	Berechnung des Durchflusses in einem Rohrleitungssystem mit den Parametern:
 	Querschnittsform: qs(‘kreis‘,‘trapez‘,‘parabel‘)
 	Querschnittsparameter: qsP(d, [s,m],a)
