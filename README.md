@@ -127,7 +127,7 @@ Gerinnehydraulik
 #### **Skript-Name:** 	normalwasser.m
 - **Beschreibung:** 	Berechnung der Normalwasserverhältnisse.
 - **Eingabedatei:**	Zeile 18: datenGerinne.csv
-- **Bildschirmeingaben:	Eingabe, ob die Fließtiefe im Strömen (yl) oder im Schießen (yr) bestimmt werden soll
+- **Bildschirmeingaben:**	Eingabe, ob die Fließtiefe im Strömen (yl) oder im Schießen (yr) bestimmt werden soll
 Bekannte Fließtiefe rechts (Strömen) bzw. links (Schießen) eingeben
 - **Subroutinen:**	NWV(y,qs,qsP,Q,g,T,ks,kSt,JS)
 	konjugiert(qs,qsP,y,Q,g,rho,yc)
