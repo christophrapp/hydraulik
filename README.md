@@ -9,6 +9,14 @@ Hydraulik für Ingenieure – ein Kurs mit Experimenten und Open-Source-Codes
 
 Die Octave-Programme sind unter der GNU General Public License (http://www.gnu.org/licenses) veröffentlicht worden. Alle Eingaben und Berechnungen erfolgen mit SI-Einheiten. Die Programme greifen teilweise auf die im .csv-Format abgespeicherten Eingabe-Dateien zu. Alle Dateien müssen in einem Verzeichnis liegen und von dort aus aufgerufen werden.
 
+Quick Start
+-----------
+Für die undeduldigen jenach Thema folgende Skripte aufrufen
+- Gerinnehydraulik: normalwasser.m
+- Rohrhydraulik: couette.m
+- instationnäre Rohrhydraulik: druckstoss.m
+- Potentialtheorie: potential.m
+
 übergreifende Funktionen
 ------------------------
 
