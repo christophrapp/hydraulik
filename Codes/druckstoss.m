@@ -16,29 +16,29 @@
 % % % along with this program.  If not, see <http://www.gnu.org/licenses/>
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Physikalische Größen
-g=9.80566; % [m/s²]
-Ef=2.1E9; % [N/m²]
-rho=1000; %[kg/m³]
-T=20; % [°C]
-hAtm=10; % [mWs] Atmosphärische Druckhöhe
-n=1.2; % [] abgeänderter kappa-Wert, der das Verhältnis der spez. Wärme bei konst. Druck gg. konst. Temp. wiedergibt.
+% Physikalische GrÃ¶ÃŸen
+g=9.80566; % [m/sÂ²]
+Ef=2.1E9; % [N/mÂ²]
+rho=1000; %[kg/mÂ³]
+T=20; % [Â°C]
+hAtm=10; % [mWs] AtmosphÃ¤rische DruckhÃ¶he
+n=1.2; % [] abgeÃ¤nderter kappa-Wert, der das VerhÃ¤ltnis der spez. WÃ¤rme bei konst. Druck gg. konst. Temp. wiedergibt.
 nue=csvread('kinViskositaet.csv');
 pD=csvread('dampfdruck.csv');
 nue=interp1(nue(:,1),nue(:,2),T);
 pD=interp1(pD(:,1),pD(:,2),T);
-% Physikalische Größen
+% Physikalische GrÃ¶ÃŸen
 
 % Leitungsdaten
 L=6000; % [m]
-Er=2.1E11; % [N/m²] E-Modul des Rohres
+Er=2.1E11; % [N/mÂ²] E-Modul des Rohres
 ho=312; % [m]
 hu=298; % [m]
 d=.3; % [m]
-A=(d/2)^2*pi; % [m²]
-ks=1E-3; % [m] äquivalente Sandrauheit
+A=(d/2)^2*pi; % [mÂ²]
+ks=1E-3; % [m] Ã¤quivalente Sandrauheit
 sZeta=0; % [] Summe der Einzelverluste OHNE Auslauf- bzw. Schieberverlust
-w=0.008; % [m] Wandstärke des Rohrs
+w=0.008; % [m] WandstÃ¤rke des Rohrs
 mueq=0.33; % [] Querkontraktionsziffer
 % Leitungsdaten
 
@@ -48,8 +48,8 @@ mueq=0.33; % [] Querkontraktionsziffer
 %0 Standardwert, nix tut sich, gerade Leitung
 %1 offenes Ende,
 %2 Schieber: vVerschluss, vVerschluss
-%3 veränderliche Geschwindigkeit: vvont
-%4 veränderlicher WSP Im Reservoir: hvont
+%3 verÃ¤nderliche Geschwindigkeit: vvont
+%4 verÃ¤nderlicher WSP Im Reservoir: hvont
 %5 Streckenschieber
 %6 Wasserschloss
 %7 Windkessel
@@ -58,7 +58,7 @@ leitungsverlauf=input("piezometrische DH (piezo), Druckstosshoehe (nur), Druckho
 % Leitungsverlauf
 
 % Verschlussorgan
-A0=A;%.0356; % [m²] Öffnungsfläche zu Beginn des Schließvorgangs
+A0=A;%.0356; % [mÂ²] Ã–ffnungsflÃ¤che zu Beginn des SchlieÃŸvorgangs
 fname=sprintf('A0=A=%1.3f m2',A0);
 disp(fname);
 A0Neu=input('A0 aendern? Wenn ja, dann Wert angeben in m2: ');
@@ -67,19 +67,19 @@ if isempty(A0Neu)==0
 end
 mue=0.98; % [] Durchflussbeiwert / Verlust im Schieber
 ts=30; % [s] Verschlusszeit
-verschlussArt=input('Schliessgesetz linear/hyperbel: ','s'); %  Schließgesetz
-spalt=0; % spalt heisst wieviel der QS-Fläche bei der Verschlusszeit noch offen ist
+verschlussArt=input('Schliessgesetz linear/hyperbel: ','s'); %  SchlieÃŸgesetz
+spalt=0; % spalt heisst wieviel der QS-FlÃ¤che bei der Verschlusszeit noch offen ist
 % Verschlussorgan
 
 % Besondere Einbauten
-V0=1E-2; % [m³] ursprüngliches Luftvolumen im Windkessel
+V0=1E-2; % [mÂ³] ursprÃ¼ngliches Luftvolumen im Windkessel
 % Besondere Einbauten
 
 % Charakteristikensystem
 stuetzstellen=3; % als j indiziert (Spalten)
 zeitschritte=40; % als i indizier (Zeilen)
-positionsgenau=10; % Wert, der angibt, ob ein Verschlussorgan auf einer Stützstelle liegt
-jPlot=stuetzstellen; % Stützstelle, deren Druckverlauf geplottet werden soll
+positionsgenau=10; % Wert, der angibt, ob ein Verschlussorgan auf einer StÃ¼tzstelle liegt
+jPlot=stuetzstellen; % StÃ¼tzstelle, deren Druckverlauf geplottet werden soll
 % Charakteristikensystem
 
 % Berechnung von Deltax und Delta t
@@ -96,11 +96,11 @@ x=(0:deltax:L); % Position Stuetzstellen
 topo=interp1(xyz(1,:),xyz(3,:),x);
 % Berechnung von Deltax und Delta t
 
-% Stationärer Fall / Bernoulli mit Darcy-Weisbach; Prandtl-Colebrook
+% StationÃ¤rer Fall / Bernoulli mit Darcy-Weisbach; Prandtl-Colebrook
 [Q,fval,info]=fsolve(@(Q)energie(Q,'kreis',d,d,L,ks,sZeta,A0,At,mue,g,T,ho-hu),sqrt(2*g*(ho-hu))*A);
 v0=Q/A;
 lambda=pc('kreis',d,d,Q,ks,T);
-% Stationärer Fall / Bernoulli mit Darcy-Weisbach; Prandtl-Colebrook
+% StationÃ¤rer Fall / Bernoulli mit Darcy-Weisbach; Prandtl-Colebrook
 
 % % Wo passiert was??
 o=zeros(1,stuetzstellen); % gibt an, ob ein Organ an der Stelle ist
@@ -111,10 +111,10 @@ for k=1:size(xyz,2)
         end
     end
 end
-pos=find(o,2); % sucht die Stützstelle des Verschlussorgans
+pos=find(o,2); % sucht die StÃ¼tzstelle des Verschlussorgans
 % % Wo passiert was??
 
-% Joukowsky-Stoß
+% Joukowsky-StoÃŸ
 maxh=a/g*v0;
 if 2*L/a>ts
     fname=sprintf('Der Joukowsky-Stoss tritt auf: maxh=%1.2f m\n',maxh);
@@ -123,12 +123,12 @@ else
     fname=sprintf('Der Joukowsky-Stoss (maxh=%1.2f m) tritt nicht auf.\n',maxh);
     disp(fname)
 end
-% Joukowsky-Stoß
+% Joukowsky-StoÃŸ
 
 % Initialisierung
 kp=zeros(zeitschritte,stuetzstellen); 
 km=zeros(zeitschritte,stuetzstellen); 
-% kp für +Charakteristik,km für -Charakteristik
+% kp fÃ¼r +Charakteristik,km fÃ¼r -Charakteristik
 h=zeros(zeitschritte,stuetzstellen);
 v=zeros(zeitschritte,stuetzstellen);
 Je=zeros(zeitschritte,stuetzstellen);
@@ -138,10 +138,10 @@ vlK=[ones(1,stuetzstellen);zeros(1,stuetzstellen)]; % falls Kavitation auftritt
 lK=zeros(1,stuetzstellen); % falls Kavitation auftritt
 % Initialisierung
 
-% Stationäre Lösung
-h(1,:)=ho-v0^2/(2*g)*(lambda*x./d); % h(x), stationärer Fall mit sZeta=0 und EL=DL
-v(1,:)=v0; % v(x), stationärer Fall
-% Stationäre Lösung
+% StationÃ¤re LÃ¶sung
+h(1,:)=ho-v0^2/(2*g)*(lambda*x./d); % h(x), stationÃ¤rer Fall mit sZeta=0 und EL=DL
+v(1,:)=v0; % v(x), stationÃ¤rer Fall
+% StationÃ¤re LÃ¶sung
 
 % Anfangscharakteristik erster Zeitschritt
 Je(1,:)=sign(v(1,:))*lambda/d.*v(1,:).^2/(2*g);
@@ -149,7 +149,7 @@ km(1,:)=-h(1,:)+a/g*v(1,:)-a*deltat*Je(1,:);
 kp(1,:)=-h(1,:)-a/g*v(1,:)+a*deltat*Je(1,:);
 % Anfangscharakteristik erster Zeitschritt
 
-% Instationäre Berechnung über Charakteristiken-Verfahren
+% InstationÃ¤re Berechnung Ã¼ber Charakteristiken-Verfahren
 for i=2:zeitschritte
     for j=1:stuetzstellen
         if j==1 % oberste Stelle nur bei ungeraden zeitschritten
@@ -169,8 +169,8 @@ for i=2:zeitschritte
 					v(i,j)=a/g*(h(i,j)+km(i-1,j+1));
                 end
 			elseif rem(i,2)==0 % zeitschritt gerade
-				v(i,j)=NaN; % an dieser Stelle ist zu diesem Zeitpunkt die Lösung der Gleichungen unmöglich
-				h(i,j)=NaN; % an dieser Stelle ist zu diesem Zeitpunkt die Lösung der Gleichungen unmöglich
+				v(i,j)=NaN; % an dieser Stelle ist zu diesem Zeitpunkt die LÃ¶sung der Gleichungen unmÃ¶glich
+				h(i,j)=NaN; % an dieser Stelle ist zu diesem Zeitpunkt die LÃ¶sung der Gleichungen unmÃ¶glich
             end
         elseif j==stuetzstellen % unterste Stelle
             if rem(i,2)==1 % i=zeitschritt==ungerade
@@ -189,8 +189,8 @@ for i=2:zeitschritte
 					v(i,j)=-g/a*(h(i,j)+kp(i-1,j-1));
                 end
 			elseif rem(i,2)==0 % zeitschritt gerade
-				v(i,j)=NaN; % an dieser Stelle ist zu diesem Zeitpunkt die Lösung der Gleichungen unmöglich
-				h(i,j)=NaN; % an dieser Stelle ist zu diesem Zeitpunkt die Lösung der Gleichungen unmöglich
+				v(i,j)=NaN; % an dieser Stelle ist zu diesem Zeitpunkt die LÃ¶sung der Gleichungen unmÃ¶glich
+				h(i,j)=NaN; % an dieser Stelle ist zu diesem Zeitpunkt die LÃ¶sung der Gleichungen unmÃ¶glich
             end
 			% alle geraden Stellen und alle geraden Zeitschritte ODER
 			% alle ungeraden Stellen und alle ungeraden Zeitschritte
@@ -200,15 +200,15 @@ for i=2:zeitschritte
 				h(i,j)=-(km(i-1,j+1)+kp(i-1,j-1))/2;
 			end
 		elseif rem(j,2)==0 && rem(i,2)==1 || rem(j,2)==1 && rem(i,2)==0
-				v(i,j)=NaN; % an dieser Stelle ist zu diesem Zeitpunkt die Lösung der Gleichungen unmöglich
-				h(i,j)=NaN; % an dieser Stelle ist zu diesem Zeitpunkt die Lösung der Gleichungen unmöglich
+				v(i,j)=NaN; % an dieser Stelle ist zu diesem Zeitpunkt die LÃ¶sung der Gleichungen unmÃ¶glich
+				h(i,j)=NaN; % an dieser Stelle ist zu diesem Zeitpunkt die LÃ¶sung der Gleichungen unmÃ¶glich
         end
-        Je(i,j)=sign(v(i,j))*pc('kreis',d,d,abs(v(i,j))*d^2*pi/4,ks,nue)...
+        Je(i,j)=sign(v(i,j))*pc('kreis',d,d,abs(v(i,j))*d^2*pi/4,ks,T)...
 			/d*v(i,j)^2/(2*g);
         km(i,j)=-h(i,j)+a/g*v(i,j)-a*deltat*Je(i,j);
         kp(i,j)=-h(i,j)-a/g*v(i,j)+a*deltat*Je(i,j);
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		% Hier kommt die Überprüfung auf Kavitation
+		% Hier kommt die ÃœberprÃ¼fung auf Kavitation
 		p=rho*g*(h(i,j)-topo(1,j)+hAtm);
 		if p<pD
 			fname=sprintf('Vorsicht Kavitation! t=%1.2f, j=%1.2f, Druckhoehe h=%1.2f m', deltat*(i-1), j, h(i,j)-topo(1,j)+hAtm);
@@ -226,7 +226,7 @@ for i=2:zeitschritte
 			end
 			km(i,j)=-h(i,j)+a/g*vr-a*deltat*Je(i,j);
 			kp(i,j)=-h(i,j)-a/g*vl+a*deltat*Je(i,j);
-			% Je bleibt unberührt, da das ursprüngliche v(i,j)=1/2(vl+vr).
+			% Je bleibt unberÃ¼hrt, da das ursprÃ¼ngliche v(i,j)=1/2(vl+vr).
 			if vrK(1,j)~=i-2
 				lK(1,j)=0; % falls im Zeitschritt davor an dieser Stelle (i-2) kein Dampfdruck mehr herrschte.
 			end
@@ -236,11 +236,11 @@ for i=2:zeitschritte
 			fname=sprintf('Laenge Kavitationsblase lK=%1.2f m, vr=%1.2f m/s, vl=%1.2f m/s\n', lK(1,j), vr, vl);
 			disp(fname)
 		end
-		% Hier kommt die Überprüfung auf Kavitation
+		% Hier kommt die ÃœberprÃ¼fung auf Kavitation
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     end
 end
-% Instationäre Berechnung über Charakteristiken-Verfahren
+% InstationÃ¤re Berechnung Ã¼ber Charakteristiken-Verfahren
 % Ausgabe Druckhoehe in Leitung
 fname=sprintf('Die maximale Druckhoehe ist: %1.2f m\nDie minimale Druckhoehe ist: %1.2f m',max(max(h-topo)),min(min(h-topo)));
 disp(fname)
