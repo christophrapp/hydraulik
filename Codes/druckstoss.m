@@ -43,7 +43,7 @@ mueq=0.33; % [] Querkontraktionsziffer
 % Leitungsdaten
 
 % Leitungsverlauf
-%x-Position in [m], Organknnzeichen:
+%x-Position in [m], Organkennzeichen:
 %erste Zeile: x, zweite Zeile y, dritte Zeile z, vierte Zeile Organtyp
 %0 Standardwert, nix tut sich, gerade Leitung
 %1 offenes Ende,
@@ -78,7 +78,7 @@ V0=1E-2; % [m³] ursprüngliches Luftvolumen im Windkessel
 
 % Charakteristikensystem
 stuetzstellen=3; % als j indiziert (Spalten)
-zeitschritte=40; % als i indizier (Zeilen)
+zeitschritte=40; % als i indiziert (Zeilen)
 positionsgenau=10; % Wert, der angibt, ob ein Verschlussorgan auf einer Stützstelle liegt
 jPlot=stuetzstellen; % Stützstelle, deren Druckverlauf geplottet werden soll
 % Charakteristikensystem
