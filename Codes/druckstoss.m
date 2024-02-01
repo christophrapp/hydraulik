@@ -65,6 +65,7 @@ A0Neu=input('A0 aendern? Wenn ja, dann Wert angeben in m2: ');
 if isempty(A0Neu)==0
 	A0=A0Neu;
 end
+At=A0; % nur für den stationären Fall
 mue=0.98; % [] Durchflussbeiwert / Verlust im Schieber
 ts=30; % [s] Verschlusszeit
 verschlussArt=input('Schliessgesetz linear/hyperbel: ','s'); %  Schließgesetz
